@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Center</title>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="CenterElements/CenterElements.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- Aditional styles, not important -->
+    <style>
+        span {
+            display: inline-block;
+            text-align: center;
+            background-color: red;
+            padding: 5px 10px;
+        }
+        
+        .blue_box_1 {
+            height: 200px;
+            padding: 20px 30px 50px 50px;
+            background-color: blue;
+        }
+        
+        .blue_box_2 {
+            height: 0px;
+            padding: 20px 0px 0px 0px;
+            margin: 30px 0px;
+            background-color: blue;
+        }
+    </style>
+    <!-- End of: Aditional styles -->
+</head>
+
+<body>
+    <div class="container">
+
+
+
+
+        <!-- Example 1 -->
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Example 1</h1>
+                <h3>By the selector</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 center_group_1">
+                <span>A<br>B<br>C</span>
+            </div>
+            <div class="col-xs-4 center_group_1">
+                <span>A</span>
+            </div>
+            <div class="col-xs-4 center_group_1">
+                <span>A<br>B</span>
+            </div>
+            <div class="col-xs-4 center_group_1">
+                <span>A<br>B<br>C</span>
+            </div>
+            <div class="col-xs-4 center_group_1">
+                <span>A</span>
+            </div>
+        </div>
+        <script>
+            var example_1 = new CenterElements(".center_group_1", {
+                // How elements will be centred, accepted values: "padding" | "margin". (default: "padding")
+                mode: "margin",
+
+                // What is the reference to centering, accepted values: "relative" | "parent". (default: "relative")
+                // - "relative" means relative to other elements in the array.
+                // - "parent" means each element independently inside its parent.
+                reference: "relative",
+
+                // Decide if padding of parent also should be considered in calculations, accepted values: true | false. (default: true)
+                // - Works only for reference="parent". 
+                ignore_parent_padding: true,
+
+                // Decide if negative margins are allowed, accepted values: true | false. (default: false)
+                allow_negative_margin: false,
+
+                // Aditional values that will be added, in pixels. (default: 0)
+                from_top: 10,
+                from_bottom: 15
+            });
+            $(window).resize(() => example_1.reload());
+        </script>
+        <!-- End of: Example 1 -->
+
+
+
+
+        <!-- Example 2 -->
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Example 2</h1>
+                <h3>By array of the elements</h3>
+            </div>
+        </div>
+        <div class="row center_group_2">
+            <div class="col-xs-4">
+                <span>A<br>B<br>C</span>
+            </div>
+            <div class="col-xs-4">
+                <span>A</span>
+            </div>
+            <div class="col-xs-4">
+                <span>A<br>B</span>
+            </div>
+            <div class="col-xs-4">
+                <span>A<br>B<br>C</span>
+            </div>
+            <div class="col-xs-4">
+                <span>A</span>
+            </div>
+        </div>
+        <script>
+            var example_2 = new CenterElements($(".center_group_2").children());
+            $(window).resize(() => example_2.reload());
+        </script>
+        <!-- End of: Example 2 -->
+
+
+
+
+        <!-- Example 3 -->
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Example 3</h1>
+                <h3>In greater parent</h3>
+            </div>
+        </div>
+        <div class="row blue_box_1">
+            <div id="center_element_3" class="col-xs-4">
+                <span>A<br>B<br>C</span>
+            </div>
+        </div>
+        <script>
+            var example_3 = new CenterElements($("#center_element_3"), {
+                reference: "parent",
+                mode: "padding",
+                ignore_parent_padding: false
+            });
+            $(window).resize(() => example_3.reload());
+        </script>
+        <!-- End of: Example 3 -->
+
+
+
+
+        <!-- Example 4 -->
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Example 4</h1>
+                <h3>In smaller parent</h3>
+            </div>
+        </div>
+        <div class="row blue_box_2">
+            <div class="col-xs-4 center_element_4">
+                <span>A<br>B<br>C</span>
+            </div>
+            <div class="col-xs-4 center_element_4">
+                <span>A<br>B</span>
+            </div>
+        </div>
+        <script>
+            var example_4 = new CenterElements($(".center_element_4"), {
+                reference: "parent",
+                mode: "margin",
+                ignore_parent_padding: false,
+                allow_negative_margin: true
+            });
+            $(window).resize(() => example_4.reload());
+        </script>
+        <!-- End of: Example 3 -->
+
+
+
+    </div>
+</body>
+
+</html>
