@@ -43,14 +43,14 @@ $(window).resize(() => example_1.reload());
 
 ##### Options description
 
-| Name                      	| Type    	| Accepted values                 	| Default    	| Description                                                                                                                                                      	|
-|---------------------------	|---------	|---------------------------------	|------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **mode**                  	| String  	| * **"padding"** * **"margin"**  	| "padding"  	| How elements will be centred.                                                                                                                                    	|
-| **reference**             	| String  	| * **"relative"** * **"parent"** 	| "relative" 	| What is the reference to centering.  - "relative" means relative to other elements in the array.  - "parent" means each element independently inside its parent. 	|
-| **ignore_parent_padding** 	| Boolean 	| * **true** * **false**          	| true       	| Decide if padding of parent also should be considered in calculations.  - Works only for reference="parent".                                                     	|
-| **allow_negative_margin** 	| Boolean 	| * **true** * **false**          	| false      	| Decide if negative margins are allowed.                                                                                                                          	|
-| **from_top**              	| Number  	| * **(-inf., inf.)**             	| 0          	| Additional margin or padding (same as mode option) to add from top.                                                                                              	|
-| **from_bottom**           	| Number  	| * **(-inf., inf.)**             	| 0          	| Additional margin or padding (same as mode option) to add from bottom.                                                                                           	|
+| Name                      	| Type    	| Accepted values             	| Default    	| Description                                                                                                                                                      	|
+|---------------------------	|---------	|-----------------------------	|------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| **mode**                  	| String  	| **"padding"** **"margin"**  	| "padding"  	| How elements will be centred.                                                                                                                                    	|
+| **reference**             	| String  	| **"relative"** **"parent"** 	| "relative" 	| What is the reference to centering.  - "relative" means relative to other elements in the array.  - "parent" means each element independently inside its parent. 	|
+| **ignore_parent_padding** 	| Boolean 	| **true** **false**          	| true       	| Decide if padding of parent also should be considered in calculations.  - Works only for reference="parent".                                                     	|
+| **allow_negative_margin** 	| Boolean 	| **true** **false**          	| false      	| Decide if negative margins are allowed.                                                                                                                          	|
+| **from_top**              	| Number  	| **(-inf., inf.)**           	| 0          	| Additional margin or padding (same as mode option) to add from top.                                                                                              	|
+| **from_bottom**           	| Number  	| **(-inf., inf.)**           	| 0          	| Additional margin or padding (same as mode option) to add from bottom.                                                                                           	|                                                                               	|
 
 **For more examples, see the [example.html](example.html) file.**
 
