@@ -1,6 +1,6 @@
 # CenterElements
 
-A JavaScript library that allows you to easyly center vertivaly html elements.
+A JavaScript library that allows you to easily center vertically html elements.
 
 ### Prerequisites
 
@@ -18,7 +18,7 @@ Include the `jQuery` library `before` adding the `CenterElements` library.
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 ```
 
-Then `add` downloaded version of `CenterElements` library.
+`Add` downloaded version of `CenterElements` library.
 
 ```
 <script src="CenterElements.js"></script>
@@ -26,7 +26,7 @@ Then `add` downloaded version of `CenterElements` library.
 
 ### Usage
 
-Destination element can be provided as a *first* argument.
+Destination element *(Array of elements)* can be provided as a *first* argument.
 Options can be send as a *second* argument *(in object)* in the *constructor*.
 
 Basic call can be achieved by typing in a `<script>` section or `.js` file:
@@ -46,8 +46,8 @@ $(window).resize(() => example_1.reload());
 | Name                      	| Type    	| Accepted values             	| Default    	| Description                                                                                                                                                      	|
 |---------------------------	|---------	|-----------------------------	|------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
 | **mode**                  	| String  	| **"padding"** <br>**"margin"**  	| "padding"  	| How elements will be centred.                                                                                                                                    	|
-| **reference**             	| String  	| **"relative"** <br>**"parent"** 	| "relative" 	| What is the reference to centering. <br>- "relative" means relative to other elements in the array. <br>- "parent" means each element independently inside its parent. 	|
-| **ignore_parent_padding** 	| Boolean 	| **true** <br>**false**          	| true       	| Decide if padding of parent also should be considered in calculations. <br>- Works only for reference="parent".                                                     	|
+| **reference**             	| String  	| **"relative"** <br>**"parent"** 	| "relative" 	| What is the reference to centering. <br> - "relative" means relative to other elements in the array. <br> - "parent" means each element independently inside its parent. 	|
+| **ignore_parent_padding** 	| Boolean 	| **true** <br>**false**          	| true       	| Decide if padding of parent also should be considered in calculations. <br> - Works only for reference="parent".                                                     	|
 | **allow_negative_margin** 	| Boolean 	| **true** <br>**false**          	| false      	| Decide if negative margins are allowed.                                                                                                                          	|
 | **from_top**              	| Number  	| **(-inf., inf.)**           	| 0          	| Additional margin or padding (same as mode option) to add from top.                                                                                              	|
 | **from_bottom**           	| Number  	| **(-inf., inf.)**           	| 0          	| Additional margin or padding (same as mode option) to add from bottom.                                                                                           	|                                                                               	|
