@@ -19,10 +19,23 @@ class CenterElements {
 
         ////////////////////////////////////
         // Default values of CenterElements
+
+        // How elements will be centred, accepted values: "padding" | "margin". (default: "padding")
         this.mode = "padding";
+
+        // What is the reference to centering, accepted values: "relative" | "parent". (default: "relative")
+        // - "relative" means relative to other elements in the array.
+        // - "parent" means each element independently inside its parent.
         this.reference = "relative";
+
+        // Decide if padding of parent also should be considered in calculations, accepted values: true | false. (default: true)
+        // - Works only for reference="parent". 
         this.ignore_parent_padding = true;
+
+        // Decide if negative margins are allowed, accepted values: true | false. (default: false)
         this.allow_negative_margin = false;
+
+        // Aditional values that will be added, in pixels. (default: 0)
         this.from_top = 0;
         this.from_bottom = 0;
 
