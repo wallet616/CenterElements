@@ -41,6 +41,8 @@ Automatically resizing elements on browser resize, can be reached by calling of 
 $(window).resize(() => example_1.reload());
 ```
 
+As new element appears with the same selector, it is needed to call `reload` manually in order to centralize it.
+
 ##### Options description
 
 | Name                      	| Type    	| Accepted values             	| Default    	| Description                                                                                                                                                      	|
@@ -61,6 +63,9 @@ $(window).resize(() => example_1.reload());
 * While there is `margin` set for the elements, and the `mode` is also set to `margin` - the original one will be ignored. The same situation occurs for `padding`.
 
 #### Versioning and changelog
+
+* v. 1.1
+    - On `reload` function call all elements are going to be centralized, even for those added dynamically.
 
 * v. 1.0
     - Creation of project and developing basic functions. 

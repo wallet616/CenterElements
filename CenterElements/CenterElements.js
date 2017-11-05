@@ -11,9 +11,10 @@ class CenterElements {
 
         ////////////////////////////////////
         // Identyficate and check element 
-        this.elements = $(element);
+        this.element_original = element;
+        this.elements = $(this.element_original);
         if (this.elements.length < 1) {
-            console.error("[Center] Error: No elements to center.");
+            console.warn("[Center] Error: No elements to center. Check selector spelling. \nIf it is an intended action, ignore this warning.");
             return;
         }
 
@@ -126,6 +127,12 @@ class CenterElements {
     }
 
     reload() {
+        // Identyficate and check element 
+        this.elements = $(this.element_original);
+        if (this.elements.length < 1) {
+            return;
+        }
+
         // Choose the reference
         if (this.reference === "relative") {
             // Reset values
